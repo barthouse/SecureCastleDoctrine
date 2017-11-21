@@ -1,0 +1,6 @@
+[submodule "CastleDoctrine"]
+	path = CastleDoctrine
+	url = https://github.com/barthouse/CastleDoctrine
+[submodule "minorGems"]
+	path = minorGems
+	url = https://github.com/barthouse/minorGems
