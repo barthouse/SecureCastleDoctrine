@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CFFC4FA0-EB23-49D2-84E0-046C7E8B6454}</ProjectGuid>
+    <RootNamespace>CastleDoctrine</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;..\..;..\..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;WIN_32;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\sdl\VisualC\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;opengl32.lib;Ws2_32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+    <CustomBuildStep />
+    <PreBuildEvent>
+      <Command>copy ..\..\sdl\VisualC\Debug\sdl.dll $(OUTDIR)
+copy ..\..\sdl\VisualC\Debug\sdl.pdb $(OUTDIR)</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>robocopy /s ..\..\CastleDoctrine\gameSource\graphics $(OUTDIR)\graphics
+robocopy /s ..\..\CastleDoctrine\gameSource\settings $(OUTDIR)\settings
+robocopy /s ..\..\CastleDoctrine\gameSource\languages $(OUTDIR)\languages
+robocopy /s ..\..\CastleDoctrine\gameSource\gameElements $(OUTDIR)\gameElements
+copy ..\..\CastleDoctrine\gameSource\language.txt $(OUTDIR)\language.txt
+copy downloadCode.ini $(OUTDIR)\settings\downloadCode.ini
+copy email.ini $(OUTDIR)\settings\email.ini
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\git\barthouse\SecureCastleDoctrine\sdl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\git\barthouse\SecureCastleDoctrine\sdl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\git\barthouse\SecureCastleDoctrine\sdl\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\git\barthouse\SecureCastleDoctrine\sdl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\game.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\PageComponent.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\GamePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\message.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\loginPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\FinalMessagePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\TextField.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\Button.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\TextButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\KeyEquivalentTextButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\SpriteButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\ticketHash.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\CheckoutHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\LiveHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\EditHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\FastBoxBlurFilter.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\HouseGridDisplay.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\CheckinHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\MenuPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\RobPickList.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\RobCheckoutHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\RobHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\RobCheckinHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\RobHouseGridDisplay.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\RobberyReplayMenuPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\FetchRobberyReplayPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\FetchSelfTestReplayPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\ReplayRobHouseGridDisplay.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\ReplayRobHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\nameProcessing.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\gameElements.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\houseObjects.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\HouseObjectPicker.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\houseTransitions.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\StaleHousePage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\tools.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\inventory.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\LoadBackpackPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\InventorySlotButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\AuctionPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\galleryObjects.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\GallerySlotButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\BuyAuctionPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\GalleryArchive.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\Gallery.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\PickerGridPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\musicPlayer.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\Timbre.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\Envelope.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\pathFind.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\seededMusic.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\SpriteToggleButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\serialWebRequests.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\balance.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\PaymentReportPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\CheckboxButton.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\BlueprintHouseGridDisplay.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\ViewBlueprintPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\FetchBlueprintPage.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\sha1Encryption.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\EyedropperStatusDisplay.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\secureString.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\sharedServerSecret.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\mapEncryptionKey.cpp" />
+    <ClCompile Include="..\..\minorGems\graphics\openGL\ScreenGL_SDL.cpp" />
+    <ClCompile Include="..\..\minorGems\graphics\openGL\SingleTextureGL.cpp" />
+    <ClCompile Include="..\..\minorGems\io\win32\TypeIOWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\util\stringUtils.cpp" />
+    <ClCompile Include="..\..\minorGems\util\StringBufferOutputStream.cpp" />
+    <ClCompile Include="..\..\minorGems\io\file\win32\PathWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\system\win32\TimeWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\system\win32\ThreadWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\system\win32\MutexLockWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\util\TranslationManager.cpp" />
+    <ClCompile Include="..\..\minorGems\network\win32\SocketWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\network\win32\HostAddressWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\network\win32\SocketClientWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\network\win32\SocketServerWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\network\NetworkFunctionLocks.cpp" />
+    <ClCompile Include="..\..\minorGems\network\LookupThread.cpp" />
+    <ClCompile Include="..\..\minorGems\network\web\WebRequest.cpp" />
+    <ClCompile Include="..\..\minorGems\network\web\URLUtils.cpp" />
+    <ClCompile Include="..\..\minorGems\util\SettingsManager.cpp" />
+    <ClCompile Include="..\..\minorGems\system\FinishedSignalThread.cpp" />
+    <ClCompile Include="..\..\minorGems\crypto\hashes\sha1.cpp" />
+    <ClCompile Include="..\..\minorGems\formats\encodingUtils.cpp" />
+    <ClCompile Include="..\..\minorGems\io\file\win32\DirectoryWin32.cpp" />
+    <ClCompile Include="..\..\minorGems\util\log\Log.cpp" />
+    <ClCompile Include="..\..\minorGems\util\log\AppLog.cpp" />
+    <ClCompile Include="..\..\minorGems\util\log\FileLog.cpp" />
+    <ClCompile Include="..\..\minorGems\util\log\PrintLog.cpp" />
+    <ClCompile Include="..\..\minorGems\util\printUtils.cpp" />
+    <ClCompile Include="..\..\minorGems\game\platforms\SDL\gameSDL.cpp" />
+    <ClCompile Include="..\..\minorGems\game\platforms\openGL\gameGraphicsGL.cpp" />
+    <ClCompile Include="..\..\minorGems\game\platforms\openGL\SpriteGL.cpp" />
+    <ClCompile Include="..\..\minorGems\game\doublePair.cpp" />
+    <ClCompile Include="..\..\minorGems\game\Font.cpp" />
+    <ClCompile Include="..\..\minorGems\game\drawUtils.cpp" />
+    <ClCompile Include="..\..\minorGems\game\platforms\SDL\DemoCodeChecker.cpp" />
+    <ClCompile Include="..\..\minorGems\sound\formats\aiff.cpp" />
+    <ClCompile Include="..\..\minorGems\sound\filters\SoundSamples.cpp" />
+    <ClCompile Include="..\..\minorGems\sound\filters\ReverbSoundFilter.cpp" />
+    <ClCompile Include="..\..\minorGems\sound\filters\coefficientFilters.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\dirent.h" />
+    <ClInclude Include="include\unistd.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
