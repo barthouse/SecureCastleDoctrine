@@ -26,18 +26,18 @@ fi
 
 echo "Building..."
 
-if make ; then
+if make &> ../../build.log ; then
 	echo "Build successful"
 else
-    echo "Build failed"
-	echo "Hit any key to exit"
+    echo "Build failed.  Check build.log for errors."
+	echo "Hit any key to exit."
 	read foo
 	exit 1
 fi
 
 cd ../..
 
-echo "Copying to bin"
+echo "Copying to bin..."
 
 mkdir -p bin
 mkdir -p bin/graphics
@@ -56,5 +56,5 @@ cp CastleDoctrine/gameSource/language.txt ./bin/
 cp -r CastleDoctrine/gameSource/gameElements/* ./bin/gameElements
 
 echo "Run ./bin/CastleDoctrineApp to play."
-echo "Hit any key to exit"
+echo "Hit any key to exit."
 read foo
