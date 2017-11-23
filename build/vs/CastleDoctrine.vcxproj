@@ -75,7 +75,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>include;..\..;..\..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MinimalRebuild>false</MinimalRebuild>
       <PreprocessorDefinitions>_USE_MATH_DEFINES;WIN_32;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -90,8 +90,7 @@
     </Link>
     <CustomBuildStep />
     <PreBuildEvent>
-      <Command>copy ..\..\sdl\VisualC\Debug\sdl.dll $(OUTDIR)
-copy ..\..\sdl\VisualC\Debug\sdl.pdb $(OUTDIR)</Command>
+      <Command>robocopy ..\..\sdl\include include\SDL</Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>robocopy /s ..\..\CastleDoctrine\gameSource\graphics $(OUTDIR)\graphics
@@ -101,6 +100,8 @@ robocopy /s ..\..\CastleDoctrine\gameSource\gameElements $(OUTDIR)\gameElements
 copy ..\..\CastleDoctrine\gameSource\language.txt $(OUTDIR)\language.txt
 copy downloadCode.ini $(OUTDIR)\settings\downloadCode.ini
 copy email.ini $(OUTDIR)\settings\email.ini
+copy ..\..\sdl\VisualC\Debug\sdl.dll $(OUTDIR)
+copy ..\..\sdl\VisualC\Debug\sdl.pdb $(OUTDIR)
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
