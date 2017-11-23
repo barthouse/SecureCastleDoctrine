@@ -4,3 +4,6 @@
 [submodule "minorGems"]
 	path = minorGems
 	url = https://github.com/barthouse/minorGems
+[submodule "SDL"]
+	path = SDL
+	url = https://github.com/barthouse/SDL.git
