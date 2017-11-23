@@ -90,19 +90,10 @@
     </Link>
     <CustomBuildStep />
     <PreBuildEvent>
-      <Command>robocopy ..\..\sdl\include include\SDL</Command>
+      <Command>robocopy /NFL ..\..\sdl\include include\SDL</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>robocopy /s ..\..\CastleDoctrine\gameSource\graphics $(OUTDIR)\graphics
-robocopy /s ..\..\CastleDoctrine\gameSource\settings $(OUTDIR)\settings
-robocopy /s ..\..\CastleDoctrine\gameSource\languages $(OUTDIR)\languages
-robocopy /s ..\..\CastleDoctrine\gameSource\gameElements $(OUTDIR)\gameElements
-copy ..\..\CastleDoctrine\gameSource\language.txt $(OUTDIR)\language.txt
-copy downloadCode.ini $(OUTDIR)\settings\downloadCode.ini
-copy email.ini $(OUTDIR)\settings\email.ini
-copy ..\..\sdl\VisualC\Debug\sdl.dll $(OUTDIR)
-copy ..\..\sdl\VisualC\Debug\sdl.pdb $(OUTDIR)
-</Command>
+      <Command>postbuild.bat $(OUTDIR)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
