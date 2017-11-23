@@ -3,7 +3,15 @@
 This project will prototype a version of CastleDoctrine which restricts the house state observable on
 the game client to only that state that can be seen.
 
-What follows are some notes on building CastleDoctrine on Windows.
+Building CastleDoctring (the easy way) with Visual Studio 2017
+
+1. Open the solution SDL\VisualC\SDL.sln, build the solution.
+2. Open the solution build\vs\CastleDoctrine.sln, build the solution.
+
+
+Building CastleDoctrine (the hard way)
+
+What follows are some notes on building CastleDoctrine on Windows using MinGW
 
 Download minGW-get-setup.exe from
 https://sourceforge.net/projects/mingw/files/Installer/
@@ -33,3 +41,5 @@ https://sourceforge.net/p/minorgems/minorGems/ci/default/tree/
 
 Castle Doctrine source at
 https://sourceforge.net/p/hcsoftware/CastleDoctrine/ci/default/tree/
+
+
