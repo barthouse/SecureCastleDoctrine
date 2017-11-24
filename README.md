@@ -42,4 +42,31 @@ https://sourceforge.net/p/minorgems/minorGems/ci/default/tree/
 Castle Doctrine source at
 https://sourceforge.net/p/hcsoftware/CastleDoctrine/ci/default/tree/
 
+Installing PHP and MySQL
+
+Office PHP site
+http://php.net/manual/en/install.php
+
+PHP on Windows
+https://www.microsoft.com/web/platform/phponwindows.aspx
+http://windows.php.net/download/
+
+WAMP Server
+https://sourceforge.net/projects/wampserver/files/latest/download
+
+Change Apache port to 8080
+
+Creating database
+create database database-name ;
+
+Setting mysql database password
+alter user 'root'@'localhost' identified by 'password' ;
+
+Follow CastleDoctring/server/HowToInstall.txt
+
+Create ticket for test user
+
+Create build\vs\downloadCode.ini.user with test user download code
+Create build\vs\email.ini.user with test user email address
+Create reflectorURL.ini.user with URL to game server URL (http://localhost:8080/reflector/server.php)
 
