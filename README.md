@@ -1,12 +1,53 @@
 # SecureCastleDoctrine
 
+## About
+
 This project will prototype a version of CastleDoctrine which restricts the house state observable on
 the game client to only that state that can be seen.
 
-Building CastleDoctring (the easy way) with Visual Studio 2017
+## Requirements
 
-1. Open the solution SDL\VisualC\SDL.sln, build the solution.
-2. Open the solution build\vs\CastleDoctrine.sln, build the solution.
+This prototype is being developed using the following development environment
+
+	Windows 10 x64
+	Visual Studio 2017
+	WAMP
+
+## Cloning
+
+This repository uses submodules thus when you are cloning the repository you must do so recursively.
+
+git clone --recursive https://github.com/barthouse/SecureCastleDoctrine.git
+
+It is expected that you will use the branch SecureCastleDoctrine for both the minorGems and CastleDoctrine submodules.
+
+cd minorGems
+git checkout SecureCastleDoctrine
+cd ..
+
+cd CastleDoctrine
+git checkout SecureCastleDoctrine
+cd ..
+
+## WAMP Installation
+
+### Install MSVC runtime libraries
+
+
+### 
+
+WAMP is used to install and manage an Apache server and its installed PHP support
+
+Download the latest WAMP release from:
+https://sourceforge.net/projects/wampserver/files/latest/download
+
+Launch wampserver3.1.0_x64.exe as an Administrator to Install.
+
+
+## Building with Visual Studio 2017
+
+Open the solution SDL\VisualC\SDL.sln, build the solution.
+Open the solution build\vs\CastleDoctrine.sln, build the solution.
 
 
 Building CastleDoctrine (the hard way)
