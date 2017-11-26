@@ -5,13 +5,24 @@ $ticketServerDir = "..\minorGems\game\ticketServer"
 $castleServerDir = "..\CastleDoctrine\server"
 $reflectorDir = "..\CastleDoctrine\reflector"
 
-Remove-item "$wwwDir\ticketServer" -Recurse
+if (-Not(Test-Path $wampDir)) {
+	"WAMP is not installed.  Please run install_wamp.bat first.  Exiting."
+	exit
+}
+
+if (Test-Path "$wwwDir\ticketServer") {
+	Remove-item "$wwwDir\ticketServer" -Recurse
+}
 Copy-Item $ticketServerDir -Destination "$wwwDir\ticketServer" -Recurse -Force
 
-Remove-item "$wwwDir\castleServer" -Recurse
+if (Test-Path "$wwwDir\castleServer") {
+	Remove-item "$wwwDir\castleServer" -Recurse
+}
 Copy-Item $castleServerDir -Destination "$wwwDir\castleServer" -Recurse -Force
 
-Remove-item "$wwwDir\reflector" -Recurse
+if (Test-Path "$wwwDir\reflector") {
+	Remove-item "$wwwDir\reflector" -Recurse
+}
 Copy-Item $reflectorDir -Destination "$wwwDir\reflector" -Recurse -Force
 
 & $mysql -u root -pmysqlpass -e "create database ticketsdb";

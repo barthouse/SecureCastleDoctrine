@@ -3,7 +3,7 @@ setlocal ENABLEEXTENSIONS
 setlocal ENABLEDELAYEDEXPANSION
 
 set elevated="no"
-whoami /groups | find "S-1-16-12288" && set elevated="yes"
+whoami /groups | find "S-1-16-12288" > nul && set elevated="yes"
 
 if !elevated! == "no" (
 	echo Must run install_wamp.bat from an elevated command prompt

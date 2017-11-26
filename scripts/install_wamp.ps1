@@ -8,7 +8,7 @@ if (Test-Path $wampDir ) {
 	exit
 }
 
-# .\install_runtimes.ps1
+.\install_runtimes.ps1
 
 Write-output "Installing WAMP to $wampDir..."
 
@@ -41,6 +41,6 @@ Write-output "Setting MySql root password ..."
 
 $mysqladmin = "$wampDir\bin\mysql\mysql5.7.19\bin\mysqladmin.exe"
 
-& $mysqladmin -ArgumentList -u root password mysqlpass
+& $mysqladmin -u root password mysqlpass
 
 Write-output "Done."
