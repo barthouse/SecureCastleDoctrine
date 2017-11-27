@@ -1,6 +1,7 @@
 setlocal ENABLEEXTENSIONS
 setlocal ENABLEDELAYEDEXPANSION
 set OUTDIR=%1
+set headless="no"
 
 if not "x%1" == "x" goto copyfiles
 
@@ -19,18 +20,23 @@ robocopy /NP /NFL /NDL /s ..\..\CastleDoctrine\gameSource\gameElements %OUTDIR%\
 
 robocopy ..\..\CastleDoctrine\gameSource %OUTDIR% language.txt
 
-for %%i in (downloadCode email reflectorURL) do (
-	if exist %%i.ini.user (
-		set SRC=%%i.ini.user
-		fc /L !SRC! %OUTDIR%\settings\%%i.ini > nul
-		if ERRORLEVEL 1 (
-			copy !SRC! %OUTDIR%\settings\%%i.ini
+echo %OUTDIR% | find /i "headless" > nul && set headless="yes"
+
+if !headless! == "no" (
+
+	for %%i in (downloadCode email reflectorURL) do (
+		if exist %%i.ini.user (
+			set SRC=%%i.ini.user
+			fc /L !SRC! %OUTDIR%\settings\%%i.ini > nul
+			if ERRORLEVEL 1 (
+				copy !SRC! %OUTDIR%\settings\%%i.ini
+			)
 		)
 	)
+
+	robocopy /np ..\..\sdl\VisualC\Debug %OUTDIR% sdl.dll
+
+	robocopy /np ..\..\sdl\VisualC\Debug %OUTDIR% sdl.pdb
 )
-
-robocopy /np ..\..\sdl\VisualC\Debug %OUTDIR% sdl.dll
-
-robocopy /np ..\..\sdl\VisualC\Debug %OUTDIR% sdl.pdb
 
 :EOF

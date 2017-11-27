@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CastleDoctrine", "CastleDoctrine.vcxproj", "{CFFC4FA0-EB23-49D2-84E0-046C7E8B6454}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HeadlessCastleDoctrine", "HeadlessCastleDoctrine.vcxproj", "{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,6 +29,18 @@ Global
 		{CFFC4FA0-EB23-49D2-84E0-046C7E8B6454}.Release|x64.Build.0 = Release|x64
 		{CFFC4FA0-EB23-49D2-84E0-046C7E8B6454}.Release|x86.ActiveCfg = Release|Win32
 		{CFFC4FA0-EB23-49D2-84E0-046C7E8B6454}.Release|x86.Build.0 = Release|Win32
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Debug|x64.ActiveCfg = Debug|x64
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Debug|x64.Build.0 = Debug|x64
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Debug|x86.ActiveCfg = Debug|Win32
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Debug|x86.Build.0 = Debug|Win32
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release_NoSTDIO|x64.ActiveCfg = Release|x64
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release_NoSTDIO|x64.Build.0 = Release|x64
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release_NoSTDIO|x86.ActiveCfg = Release|Win32
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release_NoSTDIO|x86.Build.0 = Release|Win32
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release|x64.ActiveCfg = Release|x64
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release|x64.Build.0 = Release|x64
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release|x86.ActiveCfg = Release|Win32
+		{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

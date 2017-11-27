@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{CFFC4FA0-EB23-49D2-84E0-046C7E8B6454}</ProjectGuid>
-    <RootNamespace>CastleDoctrine</RootNamespace>
+    <ProjectGuid>{F716E33C-0BAB-4392-9AE3-F133D0E85B8E}</ProjectGuid>
+    <RootNamespace>HeadlessCastleDoctrine</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -69,8 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\CastleDoctrine</OutDir>
-    <IntDir>$(SolutionDir)obj\$(Configuration)\CastleDoctrine</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\HeadlessCastleDoctrine</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\HeadlessCastleDoctrine</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -84,8 +84,11 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>..\..\sdl\VisualC\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <!--	  
       <AdditionalDependencies>SDL.lib;SDLmain.lib;opengl32.lib;Ws2_32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
+-->
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
     </Link>
@@ -137,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\headlessGamePlatform.cpp" />
+    <ClCompile Include="..\..\CastleDoctrine\gameSource\robberySimulator.cpp" />
     <ClCompile Include="..\..\CastleDoctrine\gameSource\game.cpp" />
     <ClCompile Include="..\..\CastleDoctrine\gameSource\PageComponent.cpp" />
     <ClCompile Include="..\..\CastleDoctrine\gameSource\GamePage.cpp" />
@@ -201,8 +206,6 @@
     <ClCompile Include="..\..\CastleDoctrine\gameSource\secureString.cpp" />
     <ClCompile Include="..\..\CastleDoctrine\gameSource\sharedServerSecret.cpp" />
     <ClCompile Include="..\..\CastleDoctrine\gameSource\mapEncryptionKey.cpp" />
-    <ClCompile Include="..\..\minorGems\graphics\openGL\ScreenGL_SDL.cpp" />
-    <ClCompile Include="..\..\minorGems\graphics\openGL\SingleTextureGL.cpp" />
     <ClCompile Include="..\..\minorGems\io\win32\TypeIOWin32.cpp" />
     <ClCompile Include="..\..\minorGems\util\stringUtils.cpp" />
     <ClCompile Include="..\..\minorGems\util\StringBufferOutputStream.cpp" />
@@ -229,13 +232,9 @@
     <ClCompile Include="..\..\minorGems\util\log\FileLog.cpp" />
     <ClCompile Include="..\..\minorGems\util\log\PrintLog.cpp" />
     <ClCompile Include="..\..\minorGems\util\printUtils.cpp" />
-    <ClCompile Include="..\..\minorGems\game\platforms\SDL\gameSDL.cpp" />
-    <ClCompile Include="..\..\minorGems\game\platforms\openGL\gameGraphicsGL.cpp" />
-    <ClCompile Include="..\..\minorGems\game\platforms\openGL\SpriteGL.cpp" />
     <ClCompile Include="..\..\minorGems\game\doublePair.cpp" />
     <ClCompile Include="..\..\minorGems\game\Font.cpp" />
     <ClCompile Include="..\..\minorGems\game\drawUtils.cpp" />
-    <ClCompile Include="..\..\minorGems\game\platforms\SDL\DemoCodeChecker.cpp" />
     <ClCompile Include="..\..\minorGems\sound\formats\aiff.cpp" />
     <ClCompile Include="..\..\minorGems\sound\filters\SoundSamples.cpp" />
     <ClCompile Include="..\..\minorGems\sound\filters\ReverbSoundFilter.cpp" />

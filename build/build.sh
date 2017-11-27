@@ -22,6 +22,8 @@ if [ "$2" = "clean" ]
 then
 	echo "Cleaning..."
 	make clean
+	echo "Done."
+	exit
 fi
 
 echo "Building..."
